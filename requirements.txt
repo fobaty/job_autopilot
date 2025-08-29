@@ -1,0 +1,7 @@
+openai
+requests
+beautifulsoup4
+markdown2
+pdfkit
+selenium
+webdriver-manager

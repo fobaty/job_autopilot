@@ -1,0 +1,3 @@
+# Oleksii Shataliuk
+## Summary
+Embedded & Systems Engineer ...

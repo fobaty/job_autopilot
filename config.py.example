@@ -1,0 +1,7 @@
+CHATGPT_API_KEY = "YOUR_CHATGPT_API_KEY"
+JOB_KEYWORDS = ["Embedded Software Engineer","IT Infrastructure","Network Automation"]
+JOB_LOCATION = "Irvine, CA"
+RESUME_TEMPLATE = "resume_template.md"
+RESULTS_FOLDER = "adapted_resumes/"
+FULL_NAME = "Oleksii Shataliuk"
+EMAIL = "fobaty8@gmail.com"
