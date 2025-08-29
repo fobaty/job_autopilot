@@ -16,7 +16,7 @@ Automated pipeline for job search, resume adaptation, PDF generation, and job ap
 
 Copy and run the following command in your terminal:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/fobaty/job_autopilot/main/install_project.sh | bash
+curl -fsSL https://raw.githubusercontent.com/fobaty/job_autopilot/main/install_project.sh -o install_project.sh && source install_project.sh
 ```
 
 This command will download and execute the install_project.sh script, which automatically installs the project and all required dependencies.
