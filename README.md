@@ -24,6 +24,9 @@ This command will download and execute the install_project.sh script, which auto
 ### Option 2: Using the full install script 
 
 1. Download or copy the `install_project.sh` script.
+```bash
+  curl -fsSL -o install_project.sh https://raw.githubusercontent.com/fobaty/job_autopilot/main/install_project.sh
+```
 2. Make it executable:
 
 ```bash
