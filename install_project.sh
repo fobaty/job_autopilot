@@ -6,7 +6,7 @@
 
 # Variables
 REPO_SSH="git@github.com:fobaty/job_autopilot.git"
-PROJECT_DIR="$HOME/job_autopilot"
+PROJECT_DIR="$HOME/job_autopilot"  # абсолютный путь, чтобы cd точно работал
 
 echo "=== Job Autopilot Full Install Script ==="
 
@@ -14,7 +14,7 @@ echo "=== Job Autopilot Full Install Script ==="
 if ! command -v python3 &> /dev/null
 then
     echo "Python3 not found. Please install Python 3.8+"
-    return 1 2>/dev/null || exit 1
+    return 1  # используем return, чтобы source не завершал терминал
 fi
 
 # 2. Clone repository
@@ -38,9 +38,9 @@ else
     echo "Virtual environment already exists."
 fi
 
-# 5. Try to activate virtual environment
+# 5. Activate virtual environment
 echo "Activating virtual environment..."
-source venv/bin/activate 2>/dev/null
+source venv/bin/activate
 
 # 6. Upgrade pip
 pip install --upgrade pip
@@ -57,15 +57,6 @@ else
     echo "config.py already exists. Skipping."
 fi
 
-# 9. Check if virtual environment is active
-if [[ "$(which python)" == *"$PROJECT_DIR/venv/bin/python"* ]]; then
-    echo "✅ Virtual environment is active."
-    echo "You are now inside $PROJECT_DIR"
-else
-    echo "⚠️ Virtual environment is NOT active."
-    echo "Please run the following command to activate it manually:"
-    echo "   source $PROJECT_DIR/venv/bin/activate"
-fi
-
 echo "=== Installation completed! ==="
+echo "You are now inside $PROJECT_DIR with the virtual environment activated."
 echo "You can run scripts: fetch_jobs.py, adapt_resume.py, save_results.py, apply_jobs.py"
