@@ -6,7 +6,7 @@
 
 # Variables
 REPO_HTTPS="https://github.com/fobaty/job_autopilot.git"
-PROJECT_DIR="$HOME/job_autopilot"
+PROJECT_DIR="$(pwd)/job_autopilot"
 
 echo "=== Job Autopilot Full Install Script ==="
 
