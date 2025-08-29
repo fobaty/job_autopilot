@@ -5,8 +5,8 @@
 # ===============================
 
 # Variables
-REPO_HTTPS="https://github.com/fobaty/job_autopilot.git"  # HTTPS для удобства
-PROJECT_DIR="$HOME/job_autopilot"  # абсолютный путь, чтобы cd точно работал
+REPO_HTTPS="https://github.com/fobaty/job_autopilot.git"
+PROJECT_DIR="$HOME/job_autopilot"
 
 echo "=== Job Autopilot Full Install Script ==="
 
@@ -29,6 +29,7 @@ fi
 
 # 3. Enter project directory
 cd "$PROJECT_DIR" || exit 1
+echo "📂 Changed directory to $PROJECT_DIR"
 
 # 4. Create virtual environment
 if [ ! -d "venv" ]; then
@@ -38,8 +39,7 @@ else
     echo "Virtual environment already exists."
 fi
 
-# 5. Try to activate virtual environment (только внутри скрипта)
-echo "Activating virtual environment (temporary, inside script)..."
+# 5. Temporary activation (для установки зависимостей)
 source venv/bin/activate 2>/dev/null || true
 
 # 6. Upgrade pip
@@ -67,14 +67,13 @@ fi
 
 # 9. Final instructions
 echo "=== Installation completed! ==="
-if [ -n "$VIRTUAL_ENV" ]; then
-    echo "✅ Virtual environment is active (because you ran the script with 'source')."
-    echo "You are now inside $PROJECT_DIR"
-else
-    echo "⚠️ Virtual environment is NOT active after script exit."
-    echo "👉 To activate it, run:"
-    echo "   cd $PROJECT_DIR"
-    echo "   source venv/bin/activate"
-fi
+echo ""
+echo "📌 To start using Job Autopilot:"
+echo "   1. Make sure you are in the project directory:"
+echo "      cd $PROJECT_DIR"
+echo "   2. Activate the virtual environment:"
+echo "      source venv/bin/activate"
+echo ""
+echo "After that you can run scripts:"
+echo "   fetch_jobs.py, adapt_resume.py, save_results.py, apply_jobs.py"
 
-echo "You can then run scripts: fetch_jobs.py, adapt_resume.py, save_results.py, apply_jobs.py"
