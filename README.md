@@ -77,7 +77,7 @@ cp config.py.example config.py
 ```
 Edit config.py to add your ChatGPT API key and other personal information.
 
-Usage
+## Usage
 1. Fetch jobs:
 
 ```bash
@@ -98,7 +98,7 @@ python save_results.py
 ```bash
 python apply_jobs.py
 ```
-Notes
+## Notes
 Test Selenium application on 1-2 vacancies before bulk submitting.
 
 Adjust selectors in apply_jobs.py for different job boards.
@@ -110,7 +110,7 @@ Always activate the virtual environment when working on the project:
 ```bash
 source venv/bin/activate
 ```
-Requirements
+## Requirements
 Python 3.8+
 
 Packages from requirements.txt
