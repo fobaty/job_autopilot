@@ -6,7 +6,7 @@
 
 # Variables
 REPO_SSH="git@github.com:fobaty/job_autopilot.git"
-PROJECT_DIR="job_autopilot"
+PROJECT_DIR="$HOME/job_autopilot"  # абсолютный путь, чтобы cd точно работал
 
 echo "=== Job Autopilot Full Install Script ==="
 
@@ -14,22 +14,21 @@ echo "=== Job Autopilot Full Install Script ==="
 if ! command -v python3 &> /dev/null
 then
     echo "Python3 not found. Please install Python 3.8+"
-    exit 1
+    return 1  # используем return, чтобы source не завершал терминал
 fi
 
 # 2. Clone repository
 if [ ! -d "$PROJECT_DIR" ]; then
     echo "Cloning repository..."
-    git clone "$REPO_SSH"
+    git clone "$REPO_SSH" "$PROJECT_DIR"
 else
     echo "Directory $PROJECT_DIR already exists. Pulling latest changes..."
-    cd "$PROJECT_DIR"
+    cd "$PROJECT_DIR" || return
     git pull origin main
-    cd ..
 fi
 
 # 3. Enter project directory
-cd "$PROJECT_DIR" || exit
+cd "$PROJECT_DIR" || return
 
 # 4. Create virtual environment
 if [ ! -d "venv" ]; then
@@ -59,5 +58,5 @@ else
 fi
 
 echo "=== Installation completed! ==="
-echo "Activate the environment using: source venv/bin/activate"
-echo "Then run scripts: fetch_jobs.py, adapt_resume.py, save_results.py, apply_jobs.py"
+echo "You are now inside $PROJECT_DIR with the virtual environment activated."
+echo "You can run scripts: fetch_jobs.py, adapt_resume.py, save_results.py, apply_jobs.py"
