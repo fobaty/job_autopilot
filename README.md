@@ -20,11 +20,12 @@ Automated pipeline for job search, resume adaptation, PDF generation, and job ap
 
 ```bash
 chmod +x install_project.sh
-Run the script:
+ ```
+3. Run the script:
 
-bash
-Copy code
+```bash
 ./install_project.sh
+ ```
 This will:
 
 Clone the repository from GitHub.
@@ -35,67 +36,68 @@ Install all required Python packages.
 
 Copy config.py.example to config.py for configuration.
 
-After installation, activate the environment (if not already active):
+4. After installation, activate the environment (if not already active):
 
-bash
-Copy code
+```bash
 source venv/bin/activate
-Option 2: Manual setup
-Clone the repository:
+ ```
+###  Option 2: Manual setup
+1. Clone the repository:
 
-bash
-Copy code
+```bash
 git clone git@github.com:fobaty/job_autopilot.git
 cd job_autopilot
-Create a virtual environment:
+ ```
+2. Create a virtual environment:
 
-bash
-Copy code
+```bash
 python3 -m venv venv
-Activate the virtual environment:
-
-bash
-Copy code
+```
+3. Activate the virtual environment:
+ 
+```bash
 source venv/bin/activate
+```
 On Windows (PowerShell):
 
 powershell
-Copy code
+```bash
 venv\Scripts\Activate.ps1
-Install dependencies:
+```
+4. Install dependencies:
 
-bash
-Copy code
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
-Create config.py from the example:
+```
+5. Create config.py from the example:
 
-bash
-Copy code
+```bash
 cp config.py.example config.py
+```
 Edit config.py to add your ChatGPT API key and other personal information.
 
 Usage
-Fetch jobs:
+1. Fetch jobs:
 
-bash
-Copy code
+```bash
 python fetch_jobs.py
-Adapt resume for each job:
+```
+2. Adapt resume for each job:
 
-bash
-Copy code
+```bash
 python adapt_resume.py
-Convert adapted resumes to PDF:
+```
+3. Convert adapted resumes to PDF:
 
-bash
-Copy code
+```bash
 python save_results.py
-Apply to jobs automatically:
+```
+4. Apply to jobs automatically:
 
-bash
-Copy code
+```bash
 python apply_jobs.py
+```
 Notes
 Test Selenium application on 1-2 vacancies before bulk submitting.
 
@@ -105,9 +107,9 @@ Do not push config.py with API keys to GitHub.
 
 Always activate the virtual environment when working on the project:
 
-bash
-Copy code
+```bash
 source venv/bin/activate
+```
 Requirements
 Python 3.8+
 
