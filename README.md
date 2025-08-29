@@ -11,9 +11,17 @@ Automated pipeline for job search, resume adaptation, PDF generation, and job ap
 
 ---
 
-## Installation & Setup
+## Option 1 Installation & Setup (recommended).
+###  Quick Installation
 
-### Option 1: Using the full install script (recommended)
+Copy and run the following command in your terminal:
+```bash
+curl -fsSL https://raw.githubusercontent.com/fobaty/job_autopilot/main/install_project.sh | bash
+```
+
+This command will download and execute the install_project.sh script, which automatically installs the project and all required dependencies.
+
+### Option 2: Using the full install script 
 
 1. Download or copy the `install_project.sh` script.
 2. Make it executable:
@@ -41,7 +49,7 @@ Copy config.py.example to config.py for configuration.
 ```bash
 source venv/bin/activate
  ```
-###  Option 2: Manual setup
+###  Option 3: Manual setup
 1. Clone the repository:
 
 ```bash
