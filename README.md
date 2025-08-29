@@ -11,8 +11,8 @@ Automated pipeline for job search, resume adaptation, PDF generation, and job ap
 
 ---
 
-## Option 1 Installation & Setup (recommended).
-###  Quick Installation
+##  Installation & Setup .
+###  Option 1: Quick Installation (recommended).
 
 Copy and run the following command in your terminal:
 ```bash
